@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<div class="reservation-page" *ngIf="event">
+  <div class="reservation-card">
+
+    <div class="top-badge">Reservation</div>
+
+    <img
+      [src]="'http://127.0.0.1:8000/storage/' + event.image"
+      alt="{{ event.title }}"
+      class="event-image"
+    >
+
+    <h2>{{ event.title }}</h2>
+
+    <p class="event-place">📍 {{ event.place }}</p>
+
+    <p class="event-date">
+      {{ event.start_date | date:'dd/MM/yyyy HH:mm' }}
+      →
+      {{ event.end_date | date:'dd/MM/yyyy HH:mm' }}
+    </p>
+
+    <p class="event-price">
+      {{ event.is_free ? 'Free event' : (event.price + ' DT') }}
+    </p>
+
+    <p class="event-capacity">
+      Remaining places: {{ event.capacity }}
+    </p>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div class="actions">
+      <a routerLink="/events" class="back-btn">Back to events</a>
+
+      <button
+        class="confirm-btn"
+        (click)="confirmReservation()"
+        [disabled]="event.capacity <= 0">
+        {{ event.capacity <= 0 ? 'Sold out' : 'Confirm Reservation' }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

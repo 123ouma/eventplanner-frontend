@@ -1,0 +1,21 @@
+<div class="admin-navbar">
+  <div class="logo" routerLink="/admin/dashboard">
+    Event <span>Planner</span> Admin
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/admin/events" routerLinkActive="active">Events</a>
+    <a routerLink="/admin/categories" routerLinkActive="active">Categories</a>
+    <a routerLink="/admin/registrations" routerLinkActive="active">Registrations</a>
+  </div>
+
+  <div class="admin-info">
+    <div class="admin-text">
+      <strong>{{ admin?.name || 'Admin' }}</strong>
+      <small>{{ admin?.email || 'admin@eventplanner.com' }}</small>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</div>

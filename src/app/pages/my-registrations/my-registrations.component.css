@@ -1,0 +1,90 @@
+.page {
+  padding: 40px 60px;
+  min-height: 80vh;
+  background: #f8f8fb;
+}
+
+.header {
+  margin-bottom: 25px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.header p {
+  margin-top: 8px;
+  color: #666;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 18px;
+}
+
+.content h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.info {
+  margin: 6px 0;
+  color: #555;
+}
+
+.price {
+  margin: 10px 0 16px;
+  font-weight: 700;
+  color: #6c63ff;
+}
+
+.empty {
+  margin-top: 20px;
+}
+
+.empty-card {
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.success-message {
+  margin-bottom: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #d4edda;
+  color: #155724;
+}
+
+.error-message {
+  margin-bottom: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8d7da;
+  color: #721c24;
+}

@@ -1,0 +1,105 @@
+.reservation-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #f8f8fb 0%, #f1f2f9 100%);
+}
+
+.reservation-card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+  text-align: center;
+}
+
+.top-badge {
+  display: inline-block;
+  background: #ecebff;
+  color: #6c63ff;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.event-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.reservation-card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+}
+
+.event-place,
+.event-date,
+.event-price {
+  margin: 8px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.event-price {
+  font-weight: 700;
+  color: #6c63ff;
+  margin-bottom: 18px;
+}
+
+.success-message {
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #d4edda;
+  color: #155724;
+}
+
+.error-message {
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: #f1f1f1;
+  color: #222;
+  font-weight: 600;
+}
+
+.confirm-btn {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  background: #6c63ff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.confirm-btn:hover {
+  background: #5a52e0;
+}

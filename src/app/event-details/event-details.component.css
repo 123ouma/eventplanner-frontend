@@ -1,0 +1,293 @@
+:host {
+  display: block;
+}
+
+/* IMPORTANT:
+   نخلي navbar فوق كل شيء في الصفحة */
+app-navbar {
+  display: block;
+  position: relative;
+  z-index: 5000;
+}
+
+/* PAGE */
+.event-page {
+  background: #f6f8fc;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO */
+.hero {
+  min-height: 430px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 28px 28px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 28px 28px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.68),
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.15)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: white !important;
+  backdrop-filter: blur(8px);
+}
+
+.hero-info h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  opacity: 0.95;
+  color: #fff;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.book-btn {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+/* DETAILS + RELATED */
+.details-section,
+.related-section {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding: 0 20px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.main-card,
+.info-card,
+.related-card {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.description-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.info-row p {
+  margin: 4px 0 0;
+  color: #555;
+}
+
+.section-header h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+/* RELATED GRID */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.related-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-6px);
+}
+
+.related-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.related-card h4 {
+  margin: 10px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.related-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  margin: 0;
+}
+
+/* Angular Material cards tuning */
+::ng-deep .mat-mdc-card {
+  border-radius: 20px !important;
+}
+
+::ng-deep .mat-mdc-card-header {
+  padding-bottom: 8px;
+}
+
+::ng-deep .mat-mdc-card-content {
+  padding-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 24px 18px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .hero::before {
+    border-radius: 0 0 22px 22px;
+  }
+
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+
+  .hero-meta {
+    gap: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 320px;
+    padding: 20px 14px;
+  }
+
+  .hero-info h1 {
+    font-size: 1.65rem;
+  }
+
+  .meta-item {
+    font-size: 0.92rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .book-btn {
+    width: 100%;
+  }
+
+  .details-section,
+  .related-section {
+    padding: 0 14px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .related-card img {
+    height: 190px;
+  }
+  :host {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* navbar فوق hero فقط في هالصفحة */
+app-navbar {
+  display: block;
+  position: relative;
+  z-index: 9999;
+}
+
+/* page */
+.event-page {
+  position: relative;
+  z-index: 1;
+}
+
+/* hero ما يقصش dropdown */
+.hero {
+  position: relative;
+  z-index: 1;
+  overflow: visible !important;
+}
+}

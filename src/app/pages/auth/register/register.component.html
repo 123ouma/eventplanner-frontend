@@ -1,0 +1,56 @@
+<div class="auth-page">
+  <div class="auth-card">
+
+    <!-- PARTIE GAUCHE IMAGE -->
+    <div class="auth-image">
+      <div class="auth-overlay">
+        <h2>Welcome back</h2>
+        <p>To keep connected with us provide us with your information</p>
+        <a routerLink="/login" class="btn-outline">Sign in</a>
+      </div>
+    </div>
+
+    <!-- PARTIE DROITE FORM -->
+    <div class="auth-form">
+      <div class="auth-form-box">
+
+        <h1>Event <span>Planner</span></h1>
+        <h2>Sign Up to Event Planner</h2>
+
+        <div *ngIf="errorMessage" class="error-box">
+          {{ errorMessage }}
+        </div>
+
+        <form (ngSubmit)="onRegister()">
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Your Name</mat-label>
+            <input matInput type="text" [(ngModel)]="name" name="name" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Your Email</mat-label>
+            <input matInput type="email" [(ngModel)]="email" name="email" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="password" name="password" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" [(ngModel)]="password_confirmation" name="password_confirmation" required>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" class="sign-btn" type="submit">
+            Sign Up
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

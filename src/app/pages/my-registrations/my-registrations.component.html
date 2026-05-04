@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<div class="page">
+
+  <div class="header">
+    <h2>My Registrations</h2>
+    <p>Manage your booked events</p>
+  </div>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="registrations.length === 0" class="empty">
+    <mat-card class="empty-card">
+      <h3>No reservations yet</h3>
+      <p>You have not booked any event for now.</p>
+    </mat-card>
+  </div>
+
+  <div class="grid">
+
+    <mat-card *ngFor="let reg of registrations" class="card">
+
+      <img
+        [src]="'http://127.0.0.1:8000/storage/' + reg.event.image"
+        class="image"
+        alt="{{ reg.event.title }}"
+      >
+
+      <div class="content">
+        <h3>{{ reg.event.title }}</h3>
+
+        <p class="info">
+          {{ reg.event.start_date | date:'dd/MM/yyyy HH:mm' }}
+        </p>
+
+        <p class="info">{{ reg.event.place }}</p>
+
+        <p class="price">
+          {{ reg.event.is_free ? 'Free' : (reg.event.price + ' DT') }}
+        </p>
+
+        <button mat-raised-button color="warn" (click)="cancelReservation(reg.id)">
+          Cancel Reservation
+        </button>
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</div>
+<app-footer></app-footer>

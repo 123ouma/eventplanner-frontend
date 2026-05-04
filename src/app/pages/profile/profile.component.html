@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="profile-page" *ngIf="user">
+  <mat-card class="profile-card">
+
+    <div class="profile-header">
+      <img [src]="previewUrl" alt="avatar" class="profile-avatar">
+
+      <div class="avatar-actions">
+        <label for="avatarInput" class="upload-btn">Change photo</label>
+        <input id="avatarInput" type="file" accept="image/*" (change)="onFileSelected($event)" hidden>
+      </div>
+    </div>
+
+    <h2>My Profile</h2>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="user.name" name="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="user.email" name="email">
+    </mat-form-field>
+    <div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+    <button mat-raised-button color="primary" class="save-btn" (click)="saveProfile()">
+      Save
+    </button>
+
+  </mat-card>
+</div>
+<app-footer></app-footer>

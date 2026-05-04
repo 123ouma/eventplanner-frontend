@@ -1,0 +1,90 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="admin-dashboard">
+
+  <div class="dashboard-header">
+    <div>
+      <h1>Admin <span>Dashboard</span></h1>
+      <p class="subtitle">Overview of events, users and registrations</p>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading-box">
+    Loading dashboard...
+  </div>
+
+  <div *ngIf="errorMessage" class="error-box">
+    {{ errorMessage }}
+  </div>
+
+  <ng-container *ngIf="!loading && stats">
+
+    <!-- STATS CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card purple">
+        <div class="stat-info">
+          <h3>{{ stats.total_events }}</h3>
+          <p>Total Events</p>
+        </div>
+      </div>
+
+      <div class="stat-card pink">
+        <div class="stat-info">
+          <h3>{{ stats.total_registrations }}</h3>
+          <p>Total Registrations</p>
+        </div>
+      </div>
+
+      <div class="stat-card blue">
+        <div class="stat-info">
+          <h3>{{ stats.total_users }}</h3>
+          <p>Total Users</p>
+        </div>
+      </div>
+
+      <div class="stat-card green">
+        <div class="stat-info">
+          <h3>{{ stats.available_events }}</h3>
+          <p>Available Events</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION CARDS -->
+    <div class="quick-links">
+      <div class="quick-card" routerLink="/admin/events">
+        <h3>Events</h3>
+        <p>Manage all events</p>
+      </div>
+
+      <div class="quick-card" routerLink="/admin/categories">
+        <h3>Categories</h3>
+        <p>Manage categories</p>
+      </div>
+
+      <div class="quick-card" routerLink="/admin/registrations">
+        <h3>Registrations</h3>
+        <p>View registrations</p>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h2>Free vs Paid Events</h2>
+        <canvas id="freePaidChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h2>Available vs Sold Out</h2>
+        <canvas id="availabilityChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card full-width">
+      <h2>Top Events by Registrations</h2>
+      <canvas id="registrationsChart"></canvas>
+    </div>
+
+  </ng-container>
+</div>

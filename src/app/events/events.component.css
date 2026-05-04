@@ -1,0 +1,160 @@
+.hero{
+  margin-top:20px;
+  height:360px;
+  border-radius:18px;
+  overflow:hidden;
+  background-image: url("http://127.0.0.1:8000/images/hero.jpg");
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.4)
+  );
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-overlay h1{
+  color:#fff;
+  font-size:58px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:1px;
+}
+.events-container {
+  padding: 40px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header span {
+  color: #6c5ce7;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filters input,
+.filters select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.filters button {
+  background: linear-gradient(135deg, #6c5ce7, #5a4bd1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  opacity: 0.9;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+}
+
+.content h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.details {
+  color: #6c5ce7;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pagination{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.pagination button{
+  padding:8px 14px;
+  border:none;
+  border-radius:8px;
+  background:#e5e5e5;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.pagination button:hover{
+  background:#d6d6ff;
+}
+
+.pagination button.active{
+  background:#6c63ff;
+  color:white;
+}
+
+.pagination button:disabled{
+  opacity:0.4;
+  cursor:not-allowed;
+}

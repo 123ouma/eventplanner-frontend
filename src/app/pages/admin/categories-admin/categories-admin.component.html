@@ -1,0 +1,84 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="categories-page">
+  <div class="admin-card">
+
+    <div class="page-header">
+      <h2>List of categories</h2>
+
+      <button class="btn-primary" (click)="openCategoryModal()">
+        Create category
+      </button>
+    </div>
+
+    <div *ngIf="successMessage" class="alert-success">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <div class="categories-list">
+
+      <div class="table-header">
+        <div>Category</div>
+        <div></div>
+      </div>
+
+      <ng-container *ngIf="categories.length > 0; else emptyState">
+        <div class="table-row" *ngFor="let category of categories">
+          <div>{{ category.name }}</div>
+
+          <div class="actions-cell">
+            <button class="delete-btn" (click)="deleteCategory(category.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #emptyState>
+        <div class="empty-state">
+          No categories found
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-box">
+
+    <h3>Create category</h3>
+
+    <form (ngSubmit)="createCategory()">
+      <div class="form-group">
+        <label>Category name</label>
+        <input
+          type="text"
+          [(ngModel)]="newCategoryName"
+          name="name"
+          placeholder="Enter category name"
+          required
+        >
+      </div>
+
+      <div class="modal-actions">
+        <button
+          type="button"
+          class="btn-outline-modal"
+          (click)="closeCategoryModal()">
+          Cancel
+        </button>
+
+        <button type="submit" class="btn-primary btn-fit">
+          Create
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

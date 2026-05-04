@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="logo" routerLink="/events">
+    Event <span>Planner</span>
+  </div>
+
+  <div class="nav-right">
+
+    <a routerLink="/events" class="nav-btn">Home</a>
+
+    <!-- si user non connecté -->
+    <ng-container *ngIf="!user">
+      <a routerLink="/login" class="nav-btn">Login</a>
+      <a routerLink="/register" class="nav-btn">Register</a>
+    </ng-container>
+
+    <!-- si user connecté -->
+    <div class="user-box" *ngIf="user" [matMenuTriggerFor]="userMenu">
+      <img
+        [src]="user.profile_image ? 'http://127.0.0.1:8000/storage/' + user.profile_image : 'assets/default-avatar.png'"
+        alt="avatar"
+        class="avatar"
+      />
+      <div class="user-info">
+        <div class="user-name">{{ user.name }}</div>
+        <div class="user-email">{{ user.email }}</div>
+      </div>
+    </div>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item routerLink="/profile">View profile</button>
+      <button mat-menu-item routerLink="/my-registrations">My registrations</button>
+      <button mat-menu-item (click)="logout()">Log out</button>
+    </mat-menu>
+
+  </div>
+</nav>

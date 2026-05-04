@@ -1,0 +1,65 @@
+.footer{
+  margin-top:60px;
+  background:#0b0b5c;
+  color:#fff;
+  padding:60px;
+  text-align:center;
+}
+
+.footer h3{
+  margin:0;
+  font-size:28px;
+  font-weight:800;
+}
+
+.footer h3 span{
+  color:#6c63ff;
+}
+
+.subscribe{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+
+.subscribe input{
+  width:300px;
+  padding:12px 15px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+
+.subscribe button{
+  padding:12px 20px;
+  border:none;
+  border-radius:10px;
+  background:#6c63ff;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.menu{
+  margin-top:20px;
+}
+
+.menu a{
+  margin:0 15px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.line{
+  height:1px;
+  background:rgba(255,255,255,0.2);
+  width:70%;
+  margin:25px auto;
+}
+
+.copy{
+  margin:0;
+  opacity:0.9;
+}

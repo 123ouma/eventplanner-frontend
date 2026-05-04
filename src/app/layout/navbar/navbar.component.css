@@ -1,0 +1,62 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 60px;
+  background: #f7f7f7;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #6c63ff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-btn {
+  background: #6c63ff;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #efefef;
+  padding: 10px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 700;
+}
+
+.user-email {
+  font-size: 13px;
+}

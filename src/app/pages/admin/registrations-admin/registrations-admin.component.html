@@ -1,0 +1,60 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="registrations-page">
+  <div class="registrations-card">
+
+    <h2 class="page-title">List of registrations</h2>
+
+    <div *ngIf="successMessage" class="alert-success">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" class="alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="loading" class="empty-box">
+      Loading...
+    </div>
+
+    <div class="table-wrapper" *ngIf="!loading">
+
+      <div class="table-header">
+        <div>Event title</div>
+        <div>Start date</div>
+        <div>User email</div>
+        <div></div>
+      </div>
+
+      <ng-container *ngIf="registrations.length > 0; else emptyState">
+        <div class="table-row" *ngFor="let registration of registrations">
+          <div>{{ registration.event?.title }}</div>
+
+          <div class="muted-text">
+            {{ formatDate(registration.event?.start_date) }}
+          </div>
+
+          <div class="muted-text">
+            {{ registration.user?.email }}
+          </div>
+
+          <div class="actions-cell">
+            <button
+              type="button"
+              class="delete-btn"
+              (click)="deleteRegistration(registration.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #emptyState>
+        <div class="empty-box">
+          No registrations found
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
